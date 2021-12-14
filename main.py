@@ -251,6 +251,53 @@ def exponent(base, exp):
     
 print(exponent(5,8))
 
+#%%
+
+def my_name_():
+    name = input("Enter first name")
+    print("Name", "Is", name, sep="**",end=' YAY')
+    return ""
+
+print(my_name_())
+
+#%%
+
+def number_pyramid():
+  rows = int(input("Enter number of rows"))
+  for i in range(1, rows + 1, 1):
+    for j in range(1, i + 1):
+      print(j,end=' ')
+    print('\n')  
+print(number_pyramid())
+
+#%%
+
+def sum_all():
+    number = int(input("Enter Number"))
+    num = 0
+    # range(start, stop, increment) The number between start and stop not including the stop
+    for i in range(0,number + 1):
+        num = num + i
+        print(i)
+    return ("Sum is: %d"%num)   
+
+print(sum_all())       
+print(sum(range(1, 6))) 
+
+#%%
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
