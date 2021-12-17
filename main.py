@@ -360,6 +360,7 @@ class Bus(Vehicle):
         print(super().seating_capacity(capacity=60))
         return super().seating_capacity(capacity=60)
 
+# Overriding a method from the parent
     def fare(self): 
         amount= super().fare()
         amount += amount * 10 / 100
@@ -373,10 +374,53 @@ print(School_bus.color,"Vehicle Name:", School_bus.name, "\nSpeed:", School_bus.
 print(School_bus.seating_capacity())
 print (School_bus.color)
 print(School_bus.fare(), modelX.fare())
+print(isinstance(School_bus, Vehicle))
 
 #%%
 
-# Overriding a method
+import json
+
+data = {"ID" : 1, "value2" : "age"}
+
+# json.loads takes in a json object and returns a string
+jsonData = json.dumps(data)
+print(type(data))
+print(type(jsonData))
+
+#%%
+
+import json
+
+sampleJson = """{"key1": "value1", "key2": "value2"}"""
+
+# json.load takes in a json object and returns a string
+data1 = json.loads(sampleJson)
+
+print(data['key2'])
+
+#%%
+
+import json
+
+# formats json string
+prettyPrint = json.dumps(data, indent=2, separators=(",", " = "))
+
+print(prettyPrint)
+
+#%%
+
+sampleJson2 = {"id" : 1, "name" : "value2", "age" : 29}
+print("Writing started...")
+with open("sampleJson2.json", "w") as write_file:
+    json.dump(sampleJson2, write_file, indent=4, sort_keys=True)
+print("Done writing")    
+
+
+
+
+
+
+
 
 
 
