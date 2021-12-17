@@ -12,9 +12,8 @@ print(p1.x)
 import pandas as pd
 c = "not"
 df = pd.read_csv("Churn.csv")
-
+# ------------------------------------------BASIC PROBLEMS PRACTICE--------------------------------
 #%%
-import re
 
 txt = "The rain in Spain"
 x = re.search("^The.*Spain$", txt)
@@ -259,7 +258,7 @@ def my_name_():
     return ""
 
 print(my_name_())
-
+# --------------------------------------LOOPS PRACTICE------------------------------------------------
 #%%
 
 def number_pyramid():
@@ -282,9 +281,119 @@ def sum_all():
     return ("Sum is: %d"%num)   
 
 print(sum_all())       
-print(sum(range(1, 6))) 
+print(sum(range(1, 5))) 
 
 #%%
+
+def multiply():
+    number = int(input("Enter Number"))
+    # range(start, stop, increment) The number between start and stop not including the stop
+    for i in range(0,11):
+       
+        print(number * i)
+    return ""
+
+print(multiply())
+
+#%%
+
+#recursive function
+
+def addition(num):
+    if num:
+        # call same function by reducing number by 1
+        return num + addition(num - 1)
+    else:
+        return 0
+
+res = addition(10)
+print(res)
+
+#%%
+def display_student(name, age):
+    print(name, age)
+
+display_student("Emma", 26)
+
+show_student = display_student
+
+show_student("Emma", 26)
+
+
+#%%
+# OOP
+
+class Vehicle:
+
+    # Class Attribute
+    color = "White"
+    
+    def __init__(self, name, max_speed, mileage, capacity):
+        self.name = name
+        self.max_speed = max_speed
+        self.mileage = mileage
+        self.capacity = capacity
+        
+
+    def show(self):
+        print("Car Speed:",self.max_speed, "Gas Mileage:", self.mileage)   
+
+    def seating_capacity(self, capacity):
+        return f"The seating capacity of a {self.name} is {capacity} passengers"
+    def fare(self):
+        return self.capacity * 100
+
+modelX = Vehicle("Ford",100,20, 5) 
+modelX.show()   
+print(modelX.color)
+
+#%%
+
+class Vehicle1:
+    pass
+
+#%%
+# Child Class: Inheritance
+
+class Bus(Vehicle):
+    def seating_capacity(self, capacity=60):
+        print(super().seating_capacity(capacity=60))
+        return super().seating_capacity(capacity=60)
+
+    def fare(self): 
+        amount= super().fare()
+        amount += amount * 10 / 100
+        return amount
+    
+
+School_bus = Bus("School Volvo", 180, 12,5)
+# School_bus.seating_capacity = 50
+# print("The seating capcity for this bus is %d" %School_bus.seating_capacity)
+print(School_bus.color,"Vehicle Name:", School_bus.name, "\nSpeed:", School_bus.max_speed, "\nMileage", School_bus.mileage)
+print(School_bus.seating_capacity())
+print (School_bus.color)
+print(School_bus.fare(), modelX.fare())
+
+#%%
+
+# Overriding a method
+
+
+
+
+        
+
+
+
+
+
+
+
+ 
+
+
+
+
 
 
 
