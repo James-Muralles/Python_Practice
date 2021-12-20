@@ -382,7 +382,7 @@ import json
 
 data = {"ID" : 1, "value2" : "age"}
 
-# json.loads takes in a json object and returns a string
+# json.dumps takes in a json object and returns a string
 jsonData = json.dumps(data)
 print(type(data))
 print(type(jsonData))
@@ -393,7 +393,7 @@ import json
 
 sampleJson = """{"key1": "value1", "key2": "value2"}"""
 
-# json.load takes in a json object and returns a string
+# json.load takes in a string and returns a json object.
 data1 = json.loads(sampleJson)
 
 print(data['key2'])
@@ -409,13 +409,48 @@ print(prettyPrint)
 
 #%%
 
-sampleJson2 = {"id" : 1, "name" : "value2", "age" : 29}
+# sampleJson2 = """{ 
+#    "company":{ 
+#       "employee":{ 
+#          "name":"emma",
+#          "payble":{ 
+#             "salary":7000,
+#             "bonus":800
+#          }
+#       }
+#    }
+# }"""
 print("Writing started...")
 with open("sampleJson2.json", "w") as write_file:
     json.dump(sampleJson2, write_file, indent=4, sort_keys=True)
-print("Done writing")    
+print("Done writing")  
+
+#%%
+import pandas as pd
+import re
+# dater = json.loads(sampleJson2)
+# print(dater['company']['employee']['payble']['salary'])
 
 
+# Opening the .json file
+f = open('sampleJson2.json')
+
+dater = json.load(f)
+daterr = json.dumps(dater, indent=2, separators=(",", " = "))
+
+print(daterr)
+
+toppings = dater['topping']
+
+for topping in toppings:
+
+    if 'Choc' in topping['type']:
+     print(topping['id'])
+
+#%%
+
+
+     
 
 
 
